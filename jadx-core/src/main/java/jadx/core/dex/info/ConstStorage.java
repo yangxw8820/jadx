@@ -98,11 +98,13 @@ public class ConstStorage {
 	}
 
 	private void addConstField(ClassNode cls, FieldNode fld, Object value, boolean isPublic) {
-		if (isPublic) {
-			globalValues.put(value, fld);
-		} else {
-			getClsValues(cls).put(value, fld);
-		}
+// 		if (isPublic) {
+// 			globalValues.put(value, fld);
+// 		} else {
+// 			getClsValues(cls).put(value, fld);
+// 		}
+		// only cls values
+		getClsValues(cls).put(value, fld);
 	}
 
 	private ValueStorage getClsValues(ClassNode cls) {
